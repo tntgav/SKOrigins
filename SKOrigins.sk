@@ -1,6 +1,6 @@
 on join:
   if {org::%player%} does not exist:
-    send "&cHey, it seems you do not have an origin. Please choose one by doing /SKOrigin and then put Normallian, Helmeteian or Arkanian"
+    send "&cHey, it seems you do not have an origin. Please choose one by doing /SKOrigin and then put Normallian, Helmeteian or Arkanian or one of the many others! use /SKOriginList to see the full list."
     #Gives the player a message if they do not have an origin.
 
 command /SKOrigin <text>:
