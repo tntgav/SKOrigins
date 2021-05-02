@@ -19,4 +19,4 @@ on damage of player:
       apply slowness 1 without any particles to the victim for 1 second
       #Causes the player to gain regeneration when under 6 hearts
 
-#End of Normallian code
+#End of Normallian code 
