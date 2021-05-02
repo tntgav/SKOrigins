@@ -1,0 +1,67 @@
+on join:
+  if {org::%player%} does not exist:
+    send "&cHey, it seems you do not have an origin. Please choose one by doing /SKOrigin and then put Normallian, Helmeteian or Arkanian"
+    #Gives the player a message if they do not have an origin.
+
+command /SKOrigin <text>:
+  trigger:
+    if arg-1 is not "Normallian" or "Helmeteian" or "Arkanian":
+      send "&c&lError:&a The origin you have entered does not seem to exist."
+    else:
+      set {org::%player%} to arg-1
+    #Allows the player to change their origin.
+
+#Normallian code
+
+every second in "serv":
+  loop all players:
+    if {org::%loop-player%} is "Normallian":
+      apply speed 2 to the loop-player for 10 seconds 
+      apply jump boost 2 to the loop-player for 10 seconds
+      #Gives the player infinite speed and jump boost 2
+
+on death of player:
+  if {org::%player%} is "Normallian":
+    send "&cYou have a faint memory... of some random numbers and letters... they read &4%player's location%"
+    #Causes the player to recieve their coordinates when they die.
+
+on damage of player:
+  if {org::%victim%} is "Normallian":
+    if victim's health is less than 6:
+      apply regeneration 3 to the victim for 8 seconds
+      #Causes the player to gain regeneration when under 6 hearts
+
+#End of Normallian code
+#Beginning of Arkanian code
+
+on left click:
+  if {org::%player%} is "Arkanian":
+    if player is sneaking:
+      set {_temp} to player's health
+      push the player backwards at speed 1
+      shoot a fireball from the player at speed 3
+      wait 1 second
+      set the player's health to {_temp}
+      #Lets the player shoot fireballs by crouching and clicking
+
+on damage:
+  if {org::%victim%} is "Arkanian":
+    extinguish the victim
+    if victim is on fire:
+      cancel event
+      #Lets the player have fire immunity
+
+on right click:
+  if {org::%player%} is "Arkanian":
+    if player is sneaking:
+      break block naturally
+      #Allows the player to break blocks instantly
+
+on damage:  
+  if {org::%attacker%} is "Arkanian":
+    damage the attacker by damage / 5 hearts
+    #Inflicts 20% of the players damage back at them
+
+#End of Arkanian code
+#Beginning of Helmeteian code
+

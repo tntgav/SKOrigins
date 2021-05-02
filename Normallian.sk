@@ -1,0 +1,22 @@
+#Normallian code
+
+every second in "serv":
+  loop all players:
+    if {org::%loop-player%} is "Normallian":
+      apply speed 2 to the loop-player for 10 seconds 
+      apply jump boost 2 to the loop-player for 10 seconds
+      #Gives the player infinite speed and jump boost 2
+
+on death of player:
+  if {org::%player%} is "Normallian":
+    send "&cYou have a faint memory... of some random numbers and letters... they read &4%player's location%"
+    #Causes the player to recieve their coordinates when they die.
+
+on damage of player:
+  if {org::%victim%} is "Normallian":
+    if victim's health is less than 4:
+      apply regeneration 1 without any particles to the victim for 8 seconds
+      apply slowness 1 without any particles to the victim for 1 second
+      #Causes the player to gain regeneration when under 6 hearts
+
+#End of Normallian code

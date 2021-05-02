@@ -1,0 +1,31 @@
+#Beginning of Arkanian code
+
+on left click:
+  if {org::%player%} is "Arkanian":
+    if player is sneaking:
+      set {_temp} to player's health
+      push the player backwards at speed 1
+      shoot a fireball from the player at speed 3
+      wait 1 second
+      set the player's health to {_temp}
+      #Lets the player shoot fireballs by crouching and clicking
+
+on damage:
+  if {org::%victim%} is "Arkanian":
+    extinguish the victim
+    if victim is on fire:
+      cancel event
+      #Lets the player have fire immunity
+
+on right click:
+  if {org::%player%} is "Arkanian":
+    if player is sneaking:
+      break block naturally
+      #Allows the player to break blocks instantly
+
+on damage:  
+  if {org::%attacker%} is "Arkanian":
+    damage the attacker by damage / 5 hearts
+    #Inflicts 20% of the players damage back at them
+
+#End of Arkanian code
