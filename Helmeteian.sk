@@ -1,1 +1,6 @@
 #Beginning of  Helmeteian code
+every 9 seconds in "serv":
+  loop all players:
+    if {org::%loop-player%} is "Helmeteian":
+      apply strength 2 to the loop-player for 10 seconds 
+      apply water breathing 5 to the loop-player for 45 seconds 

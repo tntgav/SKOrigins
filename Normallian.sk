@@ -15,7 +15,7 @@ on death of player:
 on damage of player:
   if {org::%victim%} is "Normallian":
     if victim's health is less than 4:
-      apply regeneration 1 without any particles to the victim for 8 seconds
+      apply regeneration 2 without any particles to the victim for 8 seconds
       apply slowness 1 without any particles to the victim for 1 second
       #Causes the player to gain regeneration when under 6 hearts
 
