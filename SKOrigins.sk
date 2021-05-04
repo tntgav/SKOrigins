@@ -10,3 +10,7 @@ command /SKOrigin <text>:
     else:
       set {org::%player%} to arg-1
     #Allows the player to change their origin.
+
+command /Admin-SKOrigin <text>:
+  trigger:
+    set {org::%player%} to arg-1
